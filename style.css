@@ -15,7 +15,8 @@
     width: 23vw;
     height: 5vw;
     border: 3px solid black;
-
+    text-align: center;
+    font-size: 36px;
 }
 .btn {
     border: 1px solid black;
