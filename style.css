@@ -1,0 +1,25 @@
+#clearButtons{
+
+    height: auto;
+
+}
+
+#numberInput{
+    margin-left: 10px;
+    height: auto;
+
+}
+
+#inputDisplay{
+    margin-left: 10px;
+    height: 5vw;
+    border: 3px solid black;
+
+}
+.btn {
+    border: 1px solid black;
+
+    box-shadow: 0 3px 0 0 #007299;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
