@@ -7,41 +7,42 @@
     <link rel="stylesheet" href="style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://Learning-Fuze.github.io/calculator/calculator.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
 <div class="container-fluid col-sm-8" id="totalArea">
-    <input name="result" id="inputDisplay" class="col-sm-4" readonly>
+    <div name="result" id="inputDisplay" class="col-sm-4">
 
-    </input>
+    </div>
     <div class="container col-sm-12" id="buttonArea">
     <div class="" id="clearButtons">
-        <input type="button" class="btn-group col-sm-2 btn btn-default btn-lg" value="C" onclick="">
-        <input type="button" class="btn-group col-sm-2 btn btn-default btn-lg" value="CE" onclick="">
+        <button type="button" class="btn-group col-sm-2 btn btn-default btn-lg" onclick="">C</button>
+        <button type="button" class="btn-group col-sm-2 btn btn-default btn-lg" onclick="">CE</button>
     </div>
 
     </div>
     <div class="row inline-block" id="numberInput">
         <div class="btn-block row center-block">
-            <button type="button" class="col-sm-1 btn-lg btn btn-danger" onclick="input_digit(7)">7</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-danger" onclick="input_digit(8)">8</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-danger" onclick="input_digit(9)">9</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-info" onclick="">&divide</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-danger" onclick="">7</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-danger" onclick="">8</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-danger" onclick="">9</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-info" onclick="">/</button>
         </div>
         <div class="btn-block row center-block">
-            <button type="button" class="col-sm-1 btn-lg btn btn-warning" onclick="input_digit(4)">4</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-warning" onclick="input_digit(5)">5</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-warning" onclick="input_digit(6)">6</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-warning" onclick="">4</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-warning" onclick="">5</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-warning" onclick="">6</button>
             <button type="button" class="col-sm-1 btn-lg btn btn-info" onclick="">x</button>
         </div>
         <div class="btn-block row center-block">
-            <button type="button" class="col-sm-1 btn-lg btn btn-primary" onclick="input_digit(1)">1</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-primary" onclick="input_digit(2)">2</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-primary" onclick="input_digit(3)">3</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-primary" onclick="">1</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-primary" onclick="">2</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-primary" onclick="">3</button>
             <button type="button" class="col-sm-1 btn-lg btn btn-info" onclick="">-</button>
         </div>
         <div class="btn-block row center-block">
-            <button type="button" class="col-sm-1 btn-lg btn btn-success" onclick="input_digit(0)">0</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-success" onclick="">0</button>
             <button type="button" class="col-sm-1 btn-lg btn btn-success" onclick="">.</button>
             <button type="button" class="col-sm-1 btn-lg btn btn-success" onclick="">=</button>
             <button type="button" class="col-sm-1 btn-lg btn btn-info" onclick="">+</button>
