@@ -36,3 +36,36 @@ $(document).ready(function() {
         }
     });
 });
+
+
+var num1 = [];
+var num2 = [];
+var value = undefined;
+//adding functionality
+var add = function(){
+
+    return num1 + num2
+};
+//subtract functionality
+var subtract = function (){
+    return num1 - num2
+};
+//division functionality
+var divide = function (){
+    return num1 / num2
+};
+//multiply functionality
+var multiply = function (){
+    return num1 * num2
+};
+//add dot functionality
+
+var Dot = function () {
+    if(value == undefined){
+        value = "0.";
+    }else{
+        my_calculator.addItem(text("."));
+    }
+
+};
+
