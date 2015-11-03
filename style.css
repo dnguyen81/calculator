@@ -7,13 +7,12 @@
 #numberInput{
     margin-left: 10px;
     height: auto;
-
 }
 
 #inputDisplay{
     margin: 5px 15px;
-    width: 23vw;
-    height: 5vw;
+    width: 50vw;
+    height: 20vw;
     border: 3px solid black;
     text-align: center;
     font-size: 36px;
@@ -29,4 +28,7 @@
 #buttonArea{
     margin-bottom: 5px;
     width: 68vw;
+}
+#operators{
+    float: left;
 }
