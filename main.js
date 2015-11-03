@@ -13,13 +13,14 @@ function populate() {
         if (!isNaN(num_array[i])) {
             if (num1 === null) {
                 num1 = num_array[i];
-            } else if (num2 === null){
+            } else if (num2 === null) {
                 num2 = num_array[i];
             }
-        } else if (op === null){
+        } else if (op === null) {
             op = num_array[i];
-        }
+        } 
     }
+
     console.log("this is num1", num1, "this is num2 ", num2, "this is op ", op);
 }
 
@@ -65,17 +66,23 @@ function calc(num1, num2, op) {
 
 }
 
-/*function addDot(){
-    var num = "";
-    num = $(this).text();
-    if ($('#period').on('click', 'button')){
-        input_digit(num);
+function addDot(){
+
+    if(decimalAdded == false){
+        $('.period, #period').prop("disabled", true);
         decimalAdded = true;
-    }else if (decimalAdded==true){
-        $('#period').prop("disabled", true);
     }
 }
-*/
+
+function reenableDot(){
+    console.log("reenable dot");
+    if(decimalAdded == true) {
+
+        $('.period, #period').prop("disabled", false);
+        decimalAdded = false;
+    }
+}
+
 //reset global variables for further calculations
 function resetCalc(){
     num1 = null;
@@ -144,6 +151,7 @@ $(document).ready(function () {
         increment(i);
         num_array.push("");
         displayResults(num);
+        reenableDot();
     });
 //operators click function end
 
@@ -152,13 +160,16 @@ $(document).ready(function () {
         switch (num) {
             case "C":
                 clear();
+                reenableDot();
                 console.log("clear works");
                 break;
             case "CE":
                 clearAll();
+                reenableDot();
                 console.log("clearall works");
                 break;
         }
+
     });
     //clear buttons end
 
@@ -177,6 +188,7 @@ $(document).ready(function () {
         num_array.splice(0,3,finish);
         decrement();
         resetCalc();
+        reenableDot();
         return finish;
     });
     //equals button clicked function end
@@ -193,6 +205,19 @@ $(document).ready(function () {
         console.log(num_array[i]);
         displayResults(num_array[i]);
 
+    });
+    $('.period, #period').on('click', 'button', function(){
+        var num = null;
+
+        console.log('works');
+        console.log($(this).text());
+
+        num = $(this).text();
+        addDot();
+
+        input_digit(num);
+        console.log(num_array[i]);
+        displayResults(num_array[i]);
     });
     //number input end
 });
