@@ -7,7 +7,7 @@ var op = null;
 var num_array = [''];
 var i = 0;
 var decimalAdded = false;
-//populate assigns global variables num1, num2, and op
+//=========populate assigns global variables num1, num2, and op============/
 function populate() {
     for (i = 0; i < num_array.length; i++) {
         if (!isNaN(num_array[i])) {
@@ -15,16 +15,20 @@ function populate() {
                 num1 = num_array[i];
             } else if (num2 === null) {
                 num2 = num_array[i];
+            }else if (num_array[i] == ""){
+                num2 = num1;
+            }else if (num_array[i]== NaN){
+                num2 = num1;
             }
         } else if (op === null) {
             op = num_array[i];
-        } 
+        }
     }
 
     console.log("this is num1", num1, "this is num2 ", num2, "this is op ", op);
 }
 
-//calculation function, uses switch and cases to determine the operand and results to perform
+//========calculation function, uses switch and cases to determine the operand and results to perform==============//
 function calc(num1, num2, op) {
     var result = "";
     var missing = 0;
@@ -65,7 +69,7 @@ function calc(num1, num2, op) {
 
 
 }
-
+//============Add Decimal, Disable, and Reenable Decimal=========//
 function addDot(){
 
     if(decimalAdded == false){
@@ -82,7 +86,9 @@ function reenableDot(){
         decimalAdded = false;
     }
 }
+function splice() {
 
+}
 //reset global variables for further calculations
 function resetCalc(){
     num1 = null;
@@ -173,7 +179,7 @@ $(document).ready(function () {
     });
     //clear buttons end
 
-    $('.equals, #eval').on('click', 'button', function () {
+    $('.equals, .eval').on('click', 'button', function () {
 
         var finish = "";
 
@@ -185,7 +191,8 @@ $(document).ready(function () {
 
         console.log(finish);
 
-        num_array.splice(0,3,finish);
+        num_array.splice(i-1,2);
+        num_array.splice(i,0,finish);
         decrement();
         resetCalc();
         reenableDot();
