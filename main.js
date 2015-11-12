@@ -118,6 +118,7 @@ function input_digit(number_string) {
 //increments i for the for loop to move along the array to populate
 function increment() {
     i++;
+    num_array.push("");
     console.log("increment", i);
 }
 
@@ -152,10 +153,8 @@ $(document).ready(function () {
         num = $(this).text();
         console.log("operator clicked");
         increment(i);
-        num_array.push("");
         input_digit(num);
         increment(i);
-        num_array.push("");
         displayResults(num);
         reenableDot();
     });
