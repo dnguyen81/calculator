@@ -6,6 +6,7 @@
 
 #clearButtons{
     height: auto;
+    margin-bottom: 5px;
 }
 
 #numberInput{
@@ -15,8 +16,8 @@
 
 #inputDisplay{
     margin: 5px 15px;
-    width: 25vw;
-    height: 10vw;
+    width: 20vw;
+    height: 8vw;
     border: 3px solid black;
     text-align: center;
     font-size: 36px;
@@ -33,5 +34,16 @@
     width: 68vw;
 }
 #operators{
+    width: 66vw;
+    margin-top: 5px;
     float: left;
+    margin-left: 1px;
+}
+.period {
+    width: 66vw;
+    margin-top: 5px;
+}
+.equals {
+    width: 66vw;
+    margin-top: 5px;
 }
