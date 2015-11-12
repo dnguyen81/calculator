@@ -37,30 +37,30 @@ function calc(num1, num2, op) {
         displayResults(missing);
 
     }else{
-    switch (op) {
+        switch (op) {
 
-        case '+':
-            result = parseFloat(num1) + parseFloat(num2);
-            break;
-        case '-':
-            result = parseFloat(num1) - parseFloat(num2);
-            break;
-        case 'x':
-            result = parseFloat(num1) * parseFloat(num2);
-            break;
-        case '/':
-            if (num2 === "0") {
-                num2 = "Error";
-                console.log("this is num2 ", num2);
-                displayResults(num2);
+            case '+':
+                result = parseFloat(num1) + parseFloat(num2);
+                break;
+            case '-':
+                result = parseFloat(num1) - parseFloat(num2);
+                break;
+            case 'x':
+                result = parseFloat(num1) * parseFloat(num2);
+                break;
+            case '/':
+                if (num2 === "0") {
+                    num2 = "Error";
+                    console.log("this is num2 ", num2);
+                    displayResults(num2);
+                    break;
+
+                }
+                result = parseFloat(num1) / parseFloat(num2);
+
                 break;
 
-            }
-            result = parseFloat(num1) / parseFloat(num2);
-
-            break;
-
-    }
+        }
     }
     console.log("This is the result" + result);
     displayResults(result);
@@ -98,7 +98,7 @@ function resetCalc(){
 //display function
 function displayResults(finish) {
 
-   // console.log("type: ", type, ", value: ", value, ", item: ", item);
+    // console.log("type: ", type, ", value: ", value, ", item: ", item);
     switch (finish) {
         case undefined:
             $('#inputDisplay').html("");
@@ -207,7 +207,7 @@ $(document).ready(function () {
         console.log($(this).text());
 
         num = $(this).text();
-       // addDot();
+        // addDot();
         input_digit(num);
         console.log(num_array[i]);
         displayResults(num_array[i]);
