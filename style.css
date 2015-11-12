@@ -1,7 +1,11 @@
-#clearButtons{
-
+#calculator {
+    width: 100%;
     height: auto;
+    margin: 5px;
+}
 
+#clearButtons{
+    height: auto;
 }
 
 #numberInput{
@@ -11,15 +15,14 @@
 
 #inputDisplay{
     margin: 5px 15px;
-    width: 50vw;
-    height: 20vw;
+    width: 25vw;
+    height: 10vw;
     border: 3px solid black;
     text-align: center;
     font-size: 36px;
 }
 .btn {
     border: 1px solid black;
-
     box-shadow: 0 3px 0 0 #007299;
     margin-bottom: -3px;
     margin-top: 5px;

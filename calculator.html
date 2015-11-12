@@ -11,55 +11,59 @@
     <script src="main.js"></script>
 </head>
 <body>
-<div class="container-fluid col-sm-8" id="calculator">
-    <div name="result" id="inputDisplay" class="col-sm-4">
+<div class="container-fluid col-sm-12" id="calculator">
+    <div name="result" id="inputDisplay" class="col-sm-12 row">
 
     </div>
-    <div class="container col-sm-12" id="buttonArea">
-    <div class="" id="clearButtons">
-        <button type="button" class="btn-group col-sm-2 btn btn-default btn-lg" id="clear">C</button>
-        <button type="button" class="btn-group col-sm-2 btn btn-default btn-lg" id="clearAll">CE</button>
-    </div>
 
-    </div>
-    <div class="row inline-block keys">
-        <div class="btn-block row center-block">
-            <button type="button" class="col-sm-1 btn-lg btn btn-danger numberInput" id="key7" onclick="">7</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-danger numberInput" id="key8" onclick="">8</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-danger numberInput" id="key9" onclick="">9</button>
-
+    <div class="container col-sm-12 row" id="buttonArea">
+        <div class="row" id="clearButtons">
+            <button type="button" class="btn-group col-sm-2 btn btn-default btn-lg" id="clear">C</button>
+            <button type="button" class="btn-group col-sm-2 btn btn-default btn-lg" id="clearAll">CE</button>
         </div>
-        <div class="btn-block row center-block">
-            <button type="button" class="col-sm-1 btn-lg btn btn-warning numberInput" id="key4" onclick="">4</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-warning numberInput" id="key5" onclick="">5</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-warning numberInput" id="key6" onclick="">6</button>
 
-        </div>
-        <div class="btn-block row center-block">
-            <button type="button" class="col-sm-1 btn-lg btn btn-primary numberInput" id="key1" onclick="">1</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-primary numberInput" id="key2" onclick="">2</button>
-            <button type="button" class="col-sm-1 btn-lg btn btn-primary numberInput" id="key3" onclick="">3</button>
+        <div class="row inline-block keys col-sm-12">
+            <div class="btn-block row center-block">
+                <button type="button" class="col-sm-1 btn-lg btn btn-danger numberInput" id="key7" onclick="">7</button>
+                <button type="button" class="col-sm-1 btn-lg btn btn-danger numberInput" id="key8" onclick="">8</button>
+                <button type="button" class="col-sm-1 btn-lg btn btn-danger numberInput" id="key9" onclick="">9</button>
 
+            </div>
+            <div class="btn-block row center-block">
+                <button type="button" class="col-sm-1 btn-lg btn btn-warning numberInput" id="key4" onclick="">4</button>
+                <button type="button" class="col-sm-1 btn-lg btn btn-warning numberInput" id="key5" onclick="">5</button>
+                <button type="button" class="col-sm-1 btn-lg btn btn-warning numberInput" id="key6" onclick="">6</button>
+
+            </div>
+            <div class="btn-block row center-block">
+                <button type="button" class="col-sm-1 btn-lg btn btn-primary numberInput" id="key1" onclick="">1</button>
+                <button type="button" class="col-sm-1 btn-lg btn btn-primary numberInput" id="key2" onclick="">2</button>
+                <button type="button" class="col-sm-1 btn-lg btn btn-primary numberInput" id="key3" onclick="">3</button>
+
+            </div>
+            <div class="btn-block row center-block">
+                <button type="button" class="col-sm-1 btn-lg btn btn-success numberInput" id="key0" value='0' onclick="">0</button>
+            </div>
         </div>
-        <div class="btn-block row center-block">
-            <button type="button" class="col-sm-1 btn-lg btn btn-success numberInput" id="key0" value='0' onclick="">0</button>
+        <div class="period">
             <button type="button" class="col-sm-1 btn-lg btn btn-success numberInput" id="period" onclick="">.</button>
-
-
+        </div>
+        <div class="equals">
+            <button type="button" class="col-sm-1 btn-lg btn btn-success eval" onclick="">=</button>
+        </div>
+        <div class = "btn-group-vertical" id="operators">
+            <button type="button" class="col-sm-1 btn-lg btn btn-info operator" id="divide" onclick="">/</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-info operator" id="mult" onclick="">x</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-info operator" id="minus" onclick="">-</button>
+            <button type="button" class="col-sm-1 btn-lg btn btn-info operator" id="plus" onclick="">+</button>
         </div>
     </div>
-    <div id="operators">
-        <button type="button" class="col-sm-1 btn-lg btn btn-info operator" id="divide" onclick="">/</button>
-        <button type="button" class="col-sm-1 btn-lg btn btn-info operator" id="mult" onclick="">x</button>
-        <button type="button" class="col-sm-1 btn-lg btn btn-info operator" id="minus" onclick="">-</button>
-        <button type="button" class="col-sm-1 btn-lg btn btn-info operator" id="plus" onclick="">+</button>
+</div>
 
-    </div>
-    <div class="equals">
-        <button type="button" class="col-sm-1 btn-lg btn btn-success eval" onclick="">=</button>
-    </div>
-    </div>
 
+
+</body>
+</html>
 
 
 </body>
