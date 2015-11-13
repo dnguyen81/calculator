@@ -205,8 +205,8 @@ $(document).ready(function () {
 
         console.log(finish);
 
-        num_array.splice(i-2,1);
-        num_array.splice(i,0,finish);
+        num_array.splice(0,2);
+        num_array.splice(0,0,finish);
         decrement();
         resetCalc();
         reenableDot();
@@ -221,7 +221,6 @@ $(document).ready(function () {
         console.log($(this).text());
 
         num = $(this).text();
-        // addDot();
         input_digit(num);
         console.log(num_array[i]);
         displayResults(num_array[i]);
