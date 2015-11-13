@@ -13,13 +13,23 @@ function populate() {
         if (!isNaN(num_array[i])) {
             if (num1 === null) {
                 num1 = num_array[i];
-            } else if (num2 === null) {
+            } else if (num1 == ""){
+                num1 = num_array[i];
+            }
+            else if (num2 === null) {
                 num2 = num_array[i];
+                if (num2 === ""){
+                    num2 = num1;
+                }
             }else if (num_array[i] == ""){
                 num2 = num1;
             }else if (num_array[i]== NaN){
                 num2 = num1;
+            }else if (num2 == num1){
+                num2 = num_array[i];
             }
+        }else if (op != null){
+            op = num_array[i];
         } else if (op === null) {
             op = num_array[i];
         }
@@ -32,36 +42,41 @@ function populate() {
 function calc(num1, num2, op) {
     var result = "";
     var missing = 0;
-    if (num1==null && num2==null && op==null){
+    if (num1=='' && num2==null && op==null){
         console.log("missing called", missing);
-        displayResults(missing);
+        result = missing;
 
-    }else{
-        switch (op) {
+    }else if(num1 != null && num2==null && op==null){
+        result = num1;
+        displayResults(result);
+    } else {
+            switch (op) {
 
-            case '+':
-                result = parseFloat(num1) + parseFloat(num2);
-                break;
-            case '-':
-                result = parseFloat(num1) - parseFloat(num2);
-                break;
-            case 'x':
-                result = parseFloat(num1) * parseFloat(num2);
-                break;
-            case '/':
-                if (num2 === "0") {
-                    num2 = "Error";
-                    console.log("this is num2 ", num2);
-                    displayResults(num2);
+                case '+':
+                    result = parseFloat(num1) + parseFloat(num2);
                     break;
+                case '-':
+                    result = parseFloat(num1) - parseFloat(num2);
+                    break;
+                case 'x':
+                    result = parseFloat(num1) * parseFloat(num2);
+                    break;
+                case '/':
+                    if (num2 === "0") {
+                        num2 = "Error";
+                        console.log("this is num2 ", num2);
+                        result = "Error";
+                        break;
 
-                }
-                result = parseFloat(num1) / parseFloat(num2);
+                    }
+                    result = parseFloat(num1) / parseFloat(num2);
 
-                break;
+                    break;
+            }
+            }
 
-        }
-    }
+
+
     console.log("This is the result" + result);
     displayResults(result);
     var numString = result.toString();
@@ -93,7 +108,7 @@ function splice() {
 function resetCalc(){
     num1 = null;
     num2 = null;
-    op = null;
+//    op = null;
 }
 //display function
 function displayResults(finish) {
@@ -190,7 +205,7 @@ $(document).ready(function () {
 
         console.log(finish);
 
-        num_array.splice(i-1,2);
+        num_array.splice(i-2,1);
         num_array.splice(i,0,finish);
         decrement();
         resetCalc();
