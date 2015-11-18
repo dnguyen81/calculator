@@ -250,9 +250,12 @@ $(document).ready(function () {
 // /= 111
 // - = 109
 // + = 107
-        // . = 110
-        var op_codes = ['*', '', '+', '-', '', '/', '', '-', '', '/', '0', '+', '0', '*'];
-        var op_values = [106, 0, 107, 109, 0, 111, 0, 189, 0, 191, 0, 187, 0, 56];
+// . = 110
+// top numbers on keyboard
+// 0 = 48, 9 = 57
+        console.log("This is the event ", event);
+        var op_codes = ['*', '', '+', '-', '', '/', '-', '/', '+', '*'];
+        var op_values = [106, 0, 107, 109, 0, 111, 189, 191, 187, 56];
         if (event.which >= 96 && event.which <= 105) {
             input_digit('' + (event.which - 96));
             addDot();
@@ -269,32 +272,7 @@ $(document).ready(function () {
             input_digit(num);
             console.log(num_array[i]);
             displayResults(num_array[i]);
-        } else if (op_values.indexOf(event.which) != -1) {
-            if(event.which == 16 && event.which == 187){
-                var char = op_codes[op_values.indexOf(187)];
-                increment();
-                var button_value = char;
-                input_digit(button_value);
-                increment();
-                displayResults(button_value);
-            }else if(event.wich == 16 && event.which == 56){
-                var char = op_codes[op_values.indexOf(56)];
-                increment();
-                var button_value = char;
-                input_digit(button_value);
-                increment();
-                displayResults(button_value);
-            }else
-                var char = op_codes[op_values.indexOf(event.which)];
-            increment();
-            var button_value = char;
-            input_digit(button_value);
-            increment();
-            displayResults(button_value);
-        } else if (event.which >= 48 && event.which <= 57) {
-            input_digit('' + (event.which - 48));
-            displayResults(num_array[i]);
-        } else if (event.which == 13 || event.which == 187) {
+        } else if ((event.which == 13 || event.which == 187) && event.shiftKey == false) {
             var finish = "";
 
             populate();
@@ -311,10 +289,30 @@ $(document).ready(function () {
             resetCalc();
             reenableDot();
             return finish;
+        }else if((event.which == 56 || event.which == 187) && event.shiftKey){
+            console.log('shift working');
+            var char = op_codes[op_values.indexOf(event.which)];
+            increment();
+            var button_value = char;
+            input_digit(button_value);
+            increment();
+            displayResults(button_value);
         }
+        else if (event.which >= 48 && event.which <= 57) {
 
-        //top numbers on keyboard
-        //0 = 48, 9 = 57
+            input_digit('' + (event.which - 48));
+            displayResults(num_array[i]);
+
+
+        } else if (op_values.indexOf(event.which) != -1) {
+            var char = op_codes[op_values.indexOf(event.which)];
+            increment();
+            var button_value = char;
+            input_digit(button_value);
+            increment();
+            displayResults(button_value);
+   
+        }
     });
 });
 //document ready function end
