@@ -61,6 +61,9 @@ function calc(num1, num2, op) {
                 case 'x':
                     result = parseFloat(num1) * parseFloat(num2);
                     break;
+                case '*':
+                    result = parseFloat(num1) * parseFloat(num2);
+                    break;
                 case '/':
                     if (num2 === "0") {
                         num2 = "Error";
@@ -240,5 +243,78 @@ $(document).ready(function () {
         displayResults(num_array[i]);
     });
     //number input end
+//==============Keyboard input==============//
+//==============number pad=================//
+    $(document).keyup(function(event) {
+//* = 106
+// /= 111
+// - = 109
+// + = 107
+        // . = 110
+        var op_codes = ['*', '', '+', '-', '', '/', '', '-', '', '/', '0', '+', '0', '*'];
+        var op_values = [106, 0, 107, 109, 0, 111, 0, 189, 0, 191, 0, 187, 0, 56];
+        if (event.which >= 96 && event.which <= 105) {
+            input_digit('' + (event.which - 96));
+            addDot();
+            displayResults(num_array[i]);
+        } else if (event.which == 110 || event.which == 190) {
+            var num = null;
+
+            console.log('works');
+            console.log($(this).text());
+
+            num = '.';
+            addDot();
+
+            input_digit(num);
+            console.log(num_array[i]);
+            displayResults(num_array[i]);
+        } else if (op_values.indexOf(event.which) != -1) {
+            if(event.which == 16 && event.which == 187){
+                var char = op_codes[op_values.indexOf(187)];
+                increment();
+                var button_value = char;
+                input_digit(button_value);
+                increment();
+                displayResults(button_value);
+            }else if(event.wich == 16 && event.which == 56){
+                var char = op_codes[op_values.indexOf(56)];
+                increment();
+                var button_value = char;
+                input_digit(button_value);
+                increment();
+                displayResults(button_value);
+            }else
+                var char = op_codes[op_values.indexOf(event.which)];
+            increment();
+            var button_value = char;
+            input_digit(button_value);
+            increment();
+            displayResults(button_value);
+        } else if (event.which >= 48 && event.which <= 57) {
+            input_digit('' + (event.which - 48));
+            displayResults(num_array[i]);
+        } else if (event.which == 13 || event.which == 187) {
+            var finish = "";
+
+            populate();
+
+            console.log('calculation');
+
+            finish = calc(num1, num2, op);
+
+            console.log(finish);
+
+            num_array.splice(0, 2);
+            num_array.splice(0, 0, finish);
+            decrement();
+            resetCalc();
+            reenableDot();
+            return finish;
+        }
+
+        //top numbers on keyboard
+        //0 = 48, 9 = 57
+    });
 });
 //document ready function end
