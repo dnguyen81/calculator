@@ -1,26 +1,29 @@
-#clearButtons{
-
+#calculator {
+    width: 100%;
     height: auto;
+    margin: 5px;
+}
 
+#clearButtons{
+    height: auto;
+    margin-bottom: 5px;
 }
 
 #numberInput{
     margin-left: 10px;
     height: auto;
-
 }
 
 #inputDisplay{
     margin: 5px 15px;
-    width: 23vw;
-    height: 5vw;
+    width: 20vw;
+    height: 8vw;
     border: 3px solid black;
     text-align: center;
     font-size: 36px;
 }
 .btn {
     border: 1px solid black;
-
     box-shadow: 0 3px 0 0 #007299;
     margin-bottom: -3px;
     margin-top: 5px;
@@ -29,4 +32,18 @@
 #buttonArea{
     margin-bottom: 5px;
     width: 68vw;
+}
+#operators{
+    width: 66vw;
+    margin-top: 5px;
+    float: left;
+    margin-left: 1px;
+}
+.period {
+    width: 66vw;
+    margin-top: 5px;
+}
+.equals {
+    width: 66vw;
+    margin-top: 5px;
 }
