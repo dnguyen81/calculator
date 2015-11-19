@@ -311,7 +311,7 @@ $(document).ready(function () {
             input_digit(button_value);
             increment();
             displayResults(button_value);
-   
+
         }
     });
 });
